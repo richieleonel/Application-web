@@ -1,6 +1,6 @@
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/richie.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -15,7 +15,7 @@
         <table align="center">
             <tr>
                 <td>
-                    {{ form_row(registrationForm.email, {'label' : 'Adresse électronique','attr':{'class':'form-control'}}) }}
+                    {{ form_row(registrationForm.email, {'label' : 'Adresse électronique :','attr':{'class':'form-control'}}) }}
                 </td>
             </tr>
             <tr>
@@ -33,9 +33,10 @@
                     {{ form_row(registrationForm.image) }}
                 </td>
             </tr>
-            <tr>
+
                 <td>
-                    {{ form_row(registrationForm.plainPassword, {'label' : 'Créez votre mot de passe','attr':{'class':'form-control'}}) }}
+            <br />
+                    {{ form_row(registrationForm.plainPassword, {'label' : 'Créez votre mot de passe : ','attr':{'class':'form-control'}}) }}
                 </td>
             </tr>
         </table>
