@@ -1,0 +1,40 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        Filiere :
+            class: App\Entity\Filiere
+            label: "Filiere"
+            form:
+                fields:
+                    - nom
+                    - cours
+
+        Cours:
+             class: App\Entity\Cours
+#             label: "Cours"
+#             form:
+#                fields:
+#                    - nom
+#                    - {property: 'nom', type: 'text'}
+#                    - description
+#                    - {property: 'description', type: 'text'}
+#                    - filieres
+
+        Commentaires:
+              class: App\Entity\Commentaires
+              label: Commentaires
+              form:
+                fields:
+                    - description
+                    - {property: 'description', type: 'text'}
+                    - username
+                    - createdAt
+                    - cours
+
+        Fichier:
+              class: App\Entity\Fichier
+
+        Utilisateurs:
+              class: App\Entity\Utilisateurs
+
+
