@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %}
+    <h1>Ajouter un fichier</h1>
+{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.path) }}
+    {{ form_row(form.cours) }}
+    <input type="submit" value="Ajouter">
+    {{ form_end(form) }}
+{% endblock %}

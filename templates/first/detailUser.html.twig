@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %} Informations Utilisateur {% endblock %}
+
+{% block body %}
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <img src="/uploads/imageProfile/{{ utilisateur.image }}" alt=""
+                 width="300px"
+                 height="300px"
+            >
+        </div>
+        <div class="col-md-8 list-group-item">
+            {{ utilisateur.id }}<br>
+            {{ utilisateur.userId }}<br>
+            {{ utilisateur.filiere.nom }}<br>
+            {{ utilisateur.email }}<br>
+        </div>
+    </div>
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Liste des cours :</h6>
+            {% for cour in app.user.filiere.cours %}
+                <li><a class="collapse-item" href="{{ path('cours.detail',{id : cour.id}) }}">{{ cour.nom }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
+{#    <div class="row">#}
+{#        {{ form_start(update) }}#}
+{#        <div class="row">#}
+{#            {{ form_row(update.userId) }}#}
+{#            {{ form_row(update.email) }}#}
+{#        </div>#}
+{#        <div class="row">#}
+{#            {{ form_row(update.filiere) }}#}
+{#            {{ form_row(update.image) }}#}
+{#        </div>#}
+{#        {{ form_row(update.plainPassword) }}#}
+{#        {{ form_end(update) }}#}
+{#    </div>#}
+
+
+
+{#    <button class="btn-dark" type="submit">Modifier</button>#}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('css/richie.css') }}">
+{% endblock %}
+
+{% block body %}
+    {{ form_start(registrationForm) }}
+    <div class="box">
+        <h1>Formulaire d'enregistrement</h1>
+        <h3>
+            Vous avez déjà un compte ?
+            <a href="{{ path('app_login') }}">Connectez vous</a>
+        </h3>
+
+        <table align="center">
+            <tr>
+                <td>
+                    {{ form_row(registrationForm.email, {'label' : 'Adresse électronique :','attr':{'class':'form-control'}}) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_row(registrationForm.userId, {'attr':{'class':'form-control'}}) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_row(registrationForm.filiere, {'attr':{'class':'form-control'}}) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_row(registrationForm.image) }}
+                </td>
+            </tr>
+
+                <td>
+            <br />
+                    {{ form_row(registrationForm.plainPassword, {'label' : 'Créez votre mot de passe : ','attr':{'class':'form-control'}}) }}
+                </td>
+            </tr>
+        </table>
+
+
+        {{ form_row(registrationForm.agreeTerms, {'attr':{'class':'form-control'}}) }}
+
+        <button class="btn" type="submit">S'enregistrer</button>
+
+    </div>
+    {{ form_end(registrationForm) }}
+{% endblock %}

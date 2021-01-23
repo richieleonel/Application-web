@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% for message in app.session.flashbag.get('success') %}
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Liste des cours :</h6>
+            {% for cour in app.user.filiere.cours %}
+                <li><a class="collapse-item" href="{{ path('cours.detail',{id : cour.id}) }}">{{ cour.nom }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
